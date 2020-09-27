@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+  color: white;
+  background-attachment: fixed;
+  opacity: 0.8;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../src/logos/main.jpg");
+  transition: background-image 0.4s ease-out;
+  background-size: "cover";
+  background-repeat: "no-repeat";
+  min-height: 100vh;
+}
+
+.App-main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../src/logos/img4.jpg");
+}
+.App-rain {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../src/logos/img5.jpg");
+  opacity: 1;
+}
+.App-clear {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../src/logos/img1.jpg");
+  opacity: 1;
+}
+.App-clouds {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../src/logos/cloudy.jpg");
+  opacity: 1;
+}
+.App-clouds {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../src/logos/haze.jpg");
+  opacity: 1;
+}
