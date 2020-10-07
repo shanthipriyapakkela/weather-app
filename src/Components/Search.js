@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import {
+  createStyles,
+  makeStyles,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import { Container, Button, createMuiTheme } from "@material-ui/core";
 
 import { getWeatherData } from "../store/actions";
-
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import { Container, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -26,6 +29,14 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#ffff",
+    },
+  },
+});
+
 const Search = () => {
   const dispatch = useDispatch();
   const [cityName, setCityName] = useState("");
@@ -43,19 +54,26 @@ const Search = () => {
   return (
     <Container>
       <form className={classes.form} noValidate autoComplete="off">
-        <TextField
-          id="standard-basic"
-          label="City"
-          color="white"
-          InputProps={{
-            classes: {
-              input: classes.textColor,
-            },
-          }}
-          onChange={(event) => {
-            setCityName(event.target.value);
-          }}
-        />
+        <ThemeProvider theme={theme}>
+          <TextField
+            className={classes.root}
+            id="standard-basic"
+            label="Enter City Name"
+            color="white"
+            InputProps={{
+              classes: {
+                input: classes.textColor,
+              },
+            }}
+            InputLabelProps={{
+              style: { color: "white" },
+              focused: "focused",
+            }}
+            onChange={(event) => {
+              setCityName(event.target.value);
+            }}
+          />
+        </ThemeProvider>
 
         <Button
           variant="contained"
